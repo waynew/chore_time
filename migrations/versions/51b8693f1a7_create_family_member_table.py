@@ -19,13 +19,13 @@ def upgrade():
             'family',
             sa.Column('id', sa.Integer, primary_key=True),
             sa.Column('name', sa.String, nullable=False),
-            sa.Column('email', sa.String, nullable=False),
             )
 
     op.create_table(
             'family_member',
             sa.Column('id', sa.Integer, primary_key=True),
             sa.Column('name', sa.String, nullable=False),
+            sa.Column('email', sa.String, nullable=True),
             sa.Column('family', sa.Integer, sa.ForeignKey('family.id')),
             )
 
